@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{% block content %}
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Téléchargement</title>
+    <link rel="stylesheet" type="text/css" href="{% static "css/telechargement.css" %}" media="all">
+    <!-- Intégration de jQuery via CDN -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+
+<body>
+    <!-- ***** Preloader Start ***** -->
+    <div id="js-preloader" class="js-preloader">
+        <div class="preloader-inner">
+            <span class="dot"></span>
+            <div class="dots">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </div>
+    <br><br>
+    <!-- ***** Preloader End ***** -->
+    <h1>Scan Terminé !!</h1>
+    <br>
+    <div class="center-container">
+      <a href="{% url 'download_file' %}" class="btn">Télécharger le rapport</a>
+    </div>
+  
+    <!-- ***** Main Banner Area End ***** -->
+
+    <!-- Script pour masquer le préchargeur une fois que la page est chargée -->
+
+    <!-- Scripts additionnels si nécessaire -->
+    <script src="{% static 'js/test.js' %}"></script>
+</body>
+</html>
+
+{% endblock %}

@@ -1,0 +1,13 @@
+.nav-button, .nav-button .nav-icon, .nav-button .nav-icon-img {
+    color: white;
+    transition: all 0.3s ease;
+  }
+
+  .nav-button:hover {
+    background-color: white;
+    color: black;
+  }
+
+  .nav-button:hover .nav-icon, .nav-button:hover .nav-icon-img {
+    color: black;
+  }

@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+
+{% block content %}
+{% load static %}
+<head>
+<link rel="stylesheet" type="text/css" href="{% static "css/bouton.css" %}" media="all"/>
+<link rel="stylesheet" type="text/css" href="{% static "css/tab.css" %}" media="all" />
+<title>Scan Sous Domain</title>
+</head>
+
+<body>
+
+<br>
+<h1>Scan Sous Domain</h1>
+<form autocomplete='off' class='form' method="POST">
+ {% csrf_token %}
+    <div class="control block-cube block-input">
+    	<input name="target_url" type="text" placeholder="example.com"></input>
+    	<button class='btn block-cube block-cube-hover' type='submit'>Rechercher</button>
+    </div>
+</form>
+{% if error %}
+    <h2 style="text-align:center">{{ error }}</h2>
+{% endif %}
+{% if result %}
+<br><br>
+<section class="table-container">
+  <div class="tbl-header">
+    <table cellpadding="0" cellspacing="0" border="0">
+      <thead>
+        <tr>
+          <th>Liste des Sous Domaines</th>
+        </tr>
+      </thead>
+    </table>
+  </div>
+  <div class="tbl-content">
+    <table cellpadding="0" cellspacing="0" border="0">
+      <tbody>
+        {% for url in result %}
+        <tr>
+          <td>{{ url }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</section>
+<br>
+{% endif %}
+</body>
+</html>
+{% endblock %}

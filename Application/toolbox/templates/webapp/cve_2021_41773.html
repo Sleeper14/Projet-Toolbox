@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+
+{% block content %}
+{% load static %}
+<html>
+<title>
+	Apache Path Traversal
+</title>
+<link rel="stylesheet" type="text/css" href="{% static "css/form.css" %}" media="all" />
+<br>
+<body>
+<div class="wrapper">
+	<div class="container">
+		<h1>Exploitation Apache Path Traversal</h1>
+        <h5>[ CVE-20.1.41773 ]</h5>
+		<form class="form" method="POST">
+            {% csrf_token %}
+			<div class="control">
+				<input type="text" name="ip" placeholder="Entrer l'IP">
+			</div>
+			<button type="submit" id="login-button">Start</button>
+		</form>
+        {% if result %}
+            {% if result.content %}
+                <h2> {{ result.message }} </h2>
+                <h2>{{ result.content }}</h2>
+            {% else %}
+                <h3> {{ result.message }} </h3>
+            {% endif %}
+        {% else %}
+            <h3> {{ error }} </h3>
+        {% endif %}
+	</div>
+</div>
+
+
+<script>
+     $("#login-button").click(function(event){
+		 event.preventDefault();
+
+	 $('small').fadeOut(500);
+	 $('.wrapper').addClass('form-success');
+});
+</script>
+</body>
+</html>
+{% endblock %}

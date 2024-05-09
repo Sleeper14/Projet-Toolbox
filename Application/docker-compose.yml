@@ -1,0 +1,30 @@
+version: '3.3'
+
+services:
+  webapp:
+    build: .
+    command: python manage.py runserver 0.0.0.0:80
+    container_name: toolbox
+    ports:
+      - 80:80
+    links:
+      - db:db
+    environment:
+      SQL_HOST: db
+      SQL_PORT: 5432
+      DATABASE: postgres
+    restart: always
+
+  db:
+    image: postgres:latest
+    container_name: database
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/
+    environment:
+      - POSTGRES_USER=user
+      - POSTGRES_PASSWORD=147r258r
+      - POSTGRES_DB=toolbox_db
+    restart: always
+
+volumes:
+  postgres_data:

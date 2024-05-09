@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% block content %}
+{% load static %}
+<html>
+<title>
+     F5 BIG IP RCE
+</title>
+<link rel="stylesheet" type="text/css" href="{% static "css/form.css" %}" media="all" />
+<br>
+<body>
+<div class="wrapper">
+	<div class="container">
+		<h1>Exploitation F5 BIG IP RCE</h1>
+        <h5>[ CVE-2022-1388 ]</h5>
+		<form class="form" method="POST">
+			{% csrf_token %}
+			<div class="control">
+				<input type="text" name="target" placeholder="Entrer l'IP">
+			</div>
+			<div class="control">
+				<input type="text" name="command" placeholder="Commande">
+			</div>
+			<button type="submit" id="login-button">Start</button>
+		</form>
+        {% if result %}
+            <h4>{{ result.message }}</h4>
+        {% else %}
+            <h3> {{ error }} </h3>
+        {% endif %}
+	</div>
+</div>
+
+
+<script>
+     $("#login-button").click(function(event){
+		 event.preventDefault();
+
+	 $('small').fadeOut(500);
+	 $('.wrapper').addClass('form-success');
+});
+</script>
+</body>
+</html>
+{% endblock %}

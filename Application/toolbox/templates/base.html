@@ -1,0 +1,64 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="shortcut icon" href="{% static "images/favicon.jpeg" %}" />
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+<link rel="stylesheet" type="text/css" href="{% static "css/base.css" %}" media="all">
+<link rel="stylesheet" type="text/css" href="{% static "css/fontawesome.css" %}" media="all">
+</head>
+<style>
+/* Add a left margin to the "page content" that matches the width of the sidebar (120px) */
+/* Remove margins from "page content" on small screens */
+
+@media only screen and (max-width: 600px) {#main {margin-left: 0}}
+
+</style>
+<body class="w3-white">
+
+  <!-- Icon Bar (Sidebar - hidden on small screens) -->
+<div style="background-color: #367DBF; text-align: center; padding: 20px 0; margin-top: 0px;">
+  <!-- Logo à gauche -->
+  <div style="position: absolute; left: 0;">
+    <img src="{% static 'images/sdv_nav.jpeg' %}" style="height:80px; margin-left: 10px;">
+  </div>
+
+  <!-- Icônes de navigation au centre -->
+  {% if user.is_authenticated %}
+    <a href="{% url 'home' %}" class="nav-button w3-button w3-xxlarge" style="margin: 0 20px;">
+      <i class="fa fa-solid fa-house-chimney nav-icon"></i>
+      <span class="w3-hide-small">Accueil</span>
+    </a>
+
+    <a href="{% url 'dashboard' %}" class="nav-button w3-button w3-xxlarge" style="margin: 0 20px;">
+      <i class="fa-solid fa-gear nav-icon"></i>
+      <span class="w3-hide-small">Outils</span>
+    </a>
+
+    <form method="POST" action="{% url 'logoutuser' %}" style="display: inline;">
+      {% csrf_token %}
+      <button type="submit" class="nav-button w3-button w3-xxlarge" style="margin: 0 20px;">
+        <i class="fa fa-sign-out-alt nav-icon"></i>
+        <span class="w3-hide-small">Déconnexion</span>
+      </button>
+    </form>
+  {% else %}
+    <a href="{% url 'home' %}" class="nav-button w3-button w3-xxlarge" style="margin: 0 20px;">
+      <i class="fa fa-solid fa-house-chimney nav-icon"></i>
+      <span class="w3-hide-small">Accueil</span>
+    </a>
+
+    <a href="{% url 'loginuser' %}" class="nav-button w3-button w3-xxlarge" style="margin: 0 20px;">
+      <i class="fa-solid fa-user-lock nav-icon"></i>
+      <span class="w3-hide-small">Connexion</span>
+    </a>
+  {% endif %}
+</div>
+
+
+{% block content %}{% endblock %}
+</body>
+</html>

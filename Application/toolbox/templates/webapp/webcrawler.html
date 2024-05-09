@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+
+{% block content %}
+{% load static %}
+<head>
+<title>
+    Web Crawler
+</title>
+<link rel="stylesheet" type="text/css" href="{% static "css/bouton.css" %}" media="all"/>
+<link rel="stylesheet" type="text/css" href="{% static "css/tab.css" %}" media="all" />
+</head>
+<body>
+
+<br>
+<h1>Web Crawler (Robot d'indexation)</h1>
+<form autocomplete='off' class='form' method="POST">
+ {% csrf_token %}
+    <div class="control block-cube block-input">
+    	<input name="target_url" type="text" placeholder="https://example.com">
+    	<button class='btn block-cube block-cube-hover' type='submit'>Rechercher</button>
+    </div>
+</form>
+{% if error %}
+    <p>{{ error }}</p>
+{% endif %}
+{% if result %}
+<br><br>
+<section class="table-container">
+  <div class="tbl-header">
+    <table cellpadding="0" cellspacing="0" border="0">
+      <thead>
+        <tr>
+          <th>URLs indexée</th>
+        </tr>
+      </thead>
+    </table>
+  </div>
+  <div class="tbl-content">
+    <table cellpadding="0" cellspacing="0" border="0">
+      <tbody>
+        {% for url in result %}
+        <tr>
+          <td>{{ url }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</section>
+</body>
+{% endif %}
+</html>
+{% endblock %}

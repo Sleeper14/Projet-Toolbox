@@ -1,0 +1,45 @@
+
+h1 {
+  font-size: 23px;
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+}/* Container pour centrer le bouton */
+.center-container {
+  display: flex;
+  justify-content: center; /* Centrage horizontal */
+}
+
+.btn {
+  background-color: #367DBF; /* Bleu clair */
+  color: white;
+  padding: 14px 20px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  text-transform: uppercase;
+  font-weight: bold;
+  width: 300px; /* Largeur fixe pour le bouton */
+  box-shadow: 0 5px #666;
+  transition: background-color 0.3s ease, box-shadow 0.2s ease;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block; /* Assure que le lien se comporte comme un bouton */
+}
+
+.btn:hover {
+  background-color: #0056b3; /* Bleu foncé au survol */
+  box-shadow: 0 2px #999;
+}
+
+.btn:active {
+  background-color: #0056b3; /* Bleu foncé quand actif */
+  box-shadow: 0 2px #666;
+  transform: translateY(4px);
+}
+
+
+.btn a {
+  color: white; /* Assure que la couleur du texte est blanche */
+  text-decoration: none; /* Enlève le soulignement */
+  display: block; /* Étend le lien pour remplir le bouton */
+}

@@ -1,0 +1,119 @@
+{% extends "base.html" %}
+
+{% block content %}
+{% load static %}
+<title>Outils</title>
+
+
+<link rel="stylesheet" type="text/css" href="{% static "css/webapp_menu.css" %}" media="all"/>
+
+
+<Body>
+  <div class="w3-padding-large" id="main">
+      <h1>Outils de la toolbox</h1>
+  </div>
+
+  <div class="container">
+      <div class="row">
+      </div>
+      <div class="col-md-6">
+        <h2>Section scans</h2>
+        <div class="tabs">
+          <div class="tab">
+            <input id="chck1">
+            <label class="tab-label" for="chck1">
+              <a href="{% url 'scan_hote' %}"><p class="w3-medium scans" style="position:relative; color: white">
+                Scan Hôte
+              </p></a></label>
+            </label>
+          </div>
+          <div class="tab">
+            <input id="chck2">
+            <label class="tab-label" for="chck2">
+              <a href="{% url 'scan_reseau' %}"><p class="w3-medium scans" style="position:relative; color: white">
+                Scan Réseau
+              </p></a></label>
+            </label>
+          </div>
+          <div class="tabs">
+            <div class="tab">
+              <input id="chck1">
+              <label class="tab-label" for="chck1">
+                <a href="{% url 'dirscan' %}"><p class="w3-medium scans" style="position:relative; color: white">
+                  Scan Répertoire
+                </p></a></label>
+              </label>
+            </div>  
+        </div>
+      </div>
+      <br><br>
+      <div class="col-md-6">
+        <h2>Section pentest</h2>
+        <div class="tabs">
+          <div class="tab">
+            <input id="chck1">
+            <label class="tab-label" for="chck1">
+              <a href="{% url 'rdpbruteforce' %}"><p class="w3-medium scans" style="position:relative; color: white">
+                Brute Force RDP 
+              </p></a></label>
+            </label>
+          </div>
+          <div class="tab">
+            <input id="chck2">
+            <label class="tab-label" for="chck2">
+              <a href="{% url 'webcrawler' %}"><p class="w3-medium scans" style="position:relative; color: white">
+                Web Crawler (Robot d'indexation)
+              </p></a></label>
+            </label>
+          </div>
+          <div class="tabs">
+            <div class="tab">
+              <input id="chck1">
+              <label class="tab-label" for="chck1">
+                <a href="{% url 'subdomain' %}"><p class="w3-medium scans" style="position:relative; color: white">
+                  Scan Sous Domain
+                </p></a></label>
+              </label>
+            </div>
+            <div class="tabs">
+              <div class="tab">
+                <input id="chck1">
+                <label class="tab-label" for="chck1">
+                  <a href="{% url 'f5_bigip_22_1388' %}"><p class="w3-medium scans" style="position:relative; color: white">
+                    Exploitation F5 BIG-IP RCE : CVE-2022-1388
+                  </p></a></label>
+                </label>
+              </div>
+              <div class="tabs">
+                <div class="tab">
+                  <input id="chck1">
+                  <label class="tab-label" for="chck1">
+                    <a href="{% url 'apache_cve_21_41773' %}"><p class="w3-medium scans" style="position:relative; color: white">
+                      Exploitation Apache Path Traversal : CVE-2021-41773
+                    </p></a></label>
+                  </label>
+                </div>
+                <div class="tabs">
+                  <div class="tab">
+                    <input id="chck1">
+                    <label class="tab-label" for="chck1">
+                      <a href="{% url 'verbtamper' %}"><p class="w3-medium scans" style="position:relative; color: white;">
+                        HTTP Verb Tampering
+                      </p></a></label>
+                    </label>
+                  </div>
+                </div>
+            </div>
+      <br><br>
+    </div>
+</Body>
+
+
+
+<script src="{% static 'js/jquery-2.1.0.min.js'%}"></script>
+<!-- Plugins -->
+<script src="{% static 'js/scrollreveal.min.js'%}"></script>
+<!-- Global Init -->
+<script src="{% static 'js/custom.js' %}"></script>
+
+{% endblock %}

@@ -1,0 +1,71 @@
+{% extends "base.html" %}
+
+{% block content %}
+{% load static %}
+<head>
+  <title>HTTP Verb-tampering</title>
+<link rel="stylesheet" type="text/css" href="{% static "css/bouton.css" %}" media="all"/>
+<link rel="stylesheet" type="text/css" href="{% static "css/tab2.css" %}" media="all" />
+</head>
+<style>
+h2{
+  font-size: 15px;
+  color: #fa2c2c;
+  text-transform: uppercase;
+  font-weight: 300;
+  margin-bottom: 10px;
+  text-align: center;
+  width: 50%;
+  margin-left: 25%;
+  margin-right: 25%;
+}
+</style>
+<body>
+
+<br>
+<h1>HTTP Verb-tampering</h1>
+<form autocomplete='off' class='form' form method="POST">
+ {% csrf_token %}
+    <div class="control block-cube block-input">
+    	<input name="target_url" type="text" placeholder="https://example.com">
+    	<button class='btn block-cube block-cube-hover' type='submit'>Rechercher</button>
+    </div>
+</form>
+{% if error %}
+    <h2 style="text-align:center">{{ error }}</h2>
+{% endif %}
+{% if result %}
+<br><br>
+<section class="table-container">
+  <div class="tbl-header">
+    <table cellpadding="0" cellspacing="0" border="0">
+      <thead>
+        <tr>
+          <th>Method</th>
+          <th>Status Code</th>
+          <th>Taille</th>
+          <th>Raison</th>
+        </tr>
+      </thead>
+    </table>
+  </div>
+<div class="tbl-content">
+    <table cellpadding="0" cellspacing="0" border="0">
+      <tbody>
+        <tr>
+{% for method, values in result %}
+          <td>{{method}}</td>
+          <td>{{values.status_code}}</td>
+          <td>{{values.length}}</td>
+          <td>{{values.reason}}</td>
+            </tr>
+      </tbody>
+{% endfor %}
+    </table>
+  </div>
+</section>
+{% endif %}
+</body>
+
+</html>
+{% endblock %}

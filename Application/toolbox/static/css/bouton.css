@@ -1,0 +1,108 @@
+::after, ::before {
+    box-sizing: border-box;
+}
+body {
+    background-color: #212121;
+    color: #fff;
+    font-family: "Montserrat", sans-serif;
+    letter-spacing: 0.05em;
+}
+h1 {
+    font-size: 23px;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+}
+.form {
+    width: 300px;
+    padding: 64px 15px 24px;
+    margin: 0 auto;
+}
+.form .control {
+    margin: 0 0 24px;
+}
+.form .control input {
+    width: 100%;
+    padding: 14px 16px;
+    border: 0;
+    background: transparent;
+    color: #fff;
+    font-family: monospace, serif;
+    letter-spacing: 0.05em;
+    font-size: 16px;
+}
+.form .control input:hover, .form .control input:focus {
+    outline: none;
+    border: 0;
+}
+.form .btn {
+    width: 100%;
+    display: block;
+    padding: 14px 16px;
+    background: transparent;
+    outline: none;
+    border: 0;
+    color: #fff;
+    letter-spacing: 0.1em;
+    font-weight: bold;
+    font-family: monospace;
+    font-size: 16px;
+}
+.form .control h1 {
+    text-align: center;
+    color: #003366; /* Bleu foncé pour un contraste fort sur fond blanc */
+}
+
+.input-text, .block-cube.block-input input {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 2px solid #0056b3; /* Bordure bleu foncé pour un contraste fort */
+    border-radius: 4px;
+    box-sizing: border-box;
+    outline: none;
+    transition: border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    background-color: #ffffff; /* Fond blanc */
+    color: #003366; /* Texte bleu foncé pour un contraste élevé */
+    font-size: 16px; /* Taille de police appropriée */
+}
+
+.input-text:hover, .block-cube.block-input input:hover,
+
+.input-text:focus, .block-cube.block-input input:focus {
+    border-color: #367DBF; /* Bleu clair pour le focus */
+    box-shadow: 0 0 8px #003366; /* Ombre pour le focus */
+}
+
+.btn, .block-cube.block-cube-hover {
+    background-color: #367DBF; /* Bleu clair */
+    color: white;
+    padding: 14px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    text-transform: uppercase;
+    font-weight: bold;
+    width: 100%;
+    box-shadow: 0 5px #666;
+    transition: background-color 0.3s ease, box-shadow 0.2s ease;
+}
+
+.btn:hover, .block-cube.block-cube-hover:hover {
+    background-color: #0056b3; /* Bleu foncé au survol */
+    box-shadow: 0 2px #999;
+}
+
+.btn:active, .block-cube.block-cube-hover:active {
+    background-color: #0056b3; /* Bleu foncé quand actif */
+    box-shadow: 0 2px #666;
+    transform: translateY(4px);
+}
+
+.bg-top, .bg-right, .bg {
+    display: none; /* Continuer de cacher les décorations si nécessaire */
+}
+
+
+
+.scans {display: inline-block; margin: 0 70px}

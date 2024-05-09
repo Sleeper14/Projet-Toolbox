@@ -1,0 +1,50 @@
+body {
+    background-color: #f0f8ff; /* Couleur de fond plus douce */
+    color: #083d77; /* Couleur de texte principale */
+    font-family: 'Montserrat', sans-serif;
+}
+
+h1, h2 {
+    color: #1b263b; /* Couleur de titre plus foncée pour un meilleur contraste */
+    font-family: 'Montserrat', sans-serif;
+}
+
+
+p {
+    line-height: 1.6; /* Augmentation de l'interligne pour une meilleure lisibilité */
+}
+
+.nav-button {
+    color: #ffffff;
+    padding: 10px 20px;
+    border-radius: 5px; /* Boutons arrondis */
+    transition: background-color 0.3s ease;
+}
+
+.nav-button:hover {
+    background-color: #0056b3; /* Changement de couleur au survol */
+}
+
+.w3-container {
+    text-align: left; /* Alignement du texte à gauche à l'intérieur du conteneur */
+    width: 60%; /* Largeur du conteneur à 60% de la largeur de l'élément parent */
+    margin: 0 auto; /* Centrage du conteneur sur la page */
+    padding: 20px; /* Ajout de marge intérieure pour le conteneur */
+}
+/* Media query pour les écrans de tablette */
+@media (max-width: 768px) {
+    .sidebar {
+        width: 80px; /* Réduction de la taille de la barre latérale pour les tablettes */
+    }
+}
+
+/* Media query pour les écrans de téléphone */
+@media (max-width: 480px) {
+    .sidebar {
+        display: none; /* Masquage de la barre latérale sur les petits écrans */
+    }
+
+    .w3-container {
+        padding: 20px; /* Ajustement des marges pour les petits écrans */
+    }
+}

@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block content %}
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static "css/base.css" %}" media="all">
+<title>Acceuil</title>
+
+<header class="w3-container w3-padding-32 w3-center" id="home">
+ <h1>Accueil</h1>
+</header>
+
+<div class="w3-container">
+    <h2>Introduction</h2>
+    <p>La Société X, avec son équipe composée de Simon ICHARD, Melvin MORIN et Marc Cibrian ZARA, est heureuse de présenter sa toolbox automatisée pour tests d'intrusion. Cet outil est notre réponse aux besoins croissants de solutions de cybersécurité intelligentes et efficaces, conçu pour renforcer les défenses des systèmes informatiques contre les attaques malveillantes.</p>
+
+    <h2>Fonctionnalités de la Toolbox</h2>
+    <p>Structurée autour de deux sections centrales, Scans et PenTest, notre toolbox est équipée pour mener à bien un audit de sécurité</p>
+    
+    <h2>Section Scans:</h2>
+    <p>- Scan Hôte : Identifie les hôtes actifs et collecte des données vitales,</p>
+    <p>- Scan Réseau : Dresse un plan détaillé du réseau, soulignant les services et dispositifs à risque.</p>
+    <p>- Scan Répertoire : Explore les serveurs web pour découvrir des répertoires cachés et des fichiers sensibles.</p>
+    
+    <h2>Section PenTest:</h2>
+    <p>-  Brute Force RDP : Teste la résistance des systèmes contre les attaques par force brute sur le protocole RDP.</p>
+    <p>-  Web Crawler : Inventorie systématiquement les ressources web pour préparer les tests de vulnérabilité.    </p>
+    <p>-  Scan Sous Domain : Détecte les sous-domaines dissimulés qui peuvent exposer des vulnérabilités.</p>
+    <p>-  Exploitations CVE : Intègre des stratégies d'exploitation pour des vulnérabilités spécifiques répertoriées dans les CVE mentionnés.</p>
+    <p>-  HTTP Verb Tampering : Teste la conformité des serveurs web aux méthodes HTTP et révèle d'éventuelles configurations défaillantes.</p>
+</div>
+
+
+
+{% endblock %}

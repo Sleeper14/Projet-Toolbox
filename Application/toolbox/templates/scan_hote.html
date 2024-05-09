@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+
+{% block content %}
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static "css/bouton.css" %}" media="all" />
+<title>Scan Hôte</title>
+
+<br>
+
+<form autocomplete='off' class='form' method="POST">
+ {% csrf_token %}
+  <div class='control'>
+    <h1>
+      Scan Hôte
+    </h1>
+  </div>
+  <div class='control block-cube block-input'>
+    <input name='ip' placeholder="Entrer le Hostname/IP" type='text' required>
+    <div class='bg-top'>
+      <div class='bg-inner'></div>
+    </div>
+    <div class='bg-right'>
+      <div class='bg-inner'></div>
+    </div>
+    <div class='bg'>
+      <div class='bg-inner'></div>
+    </div>
+  </div>
+
+  <button class='btn block-cube block-cube-hover' type='submit'>
+    <div class='bg-top'>
+      <div class='bg-inner'></div>
+    </div>
+    <div class='bg-right'>
+      <div class='bg-inner'></div>
+    </div>
+    <div class='bg'>
+      <div class='bg-inner'></div>
+    </div>
+    <div class='text'>
+      Start
+    </div>
+  </button>
+</form>
+
+
+
+{% endblock %}

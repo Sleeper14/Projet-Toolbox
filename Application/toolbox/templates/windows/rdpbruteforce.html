@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+
+{% block content %}
+{% load static %}
+<!DOCTYPE html>
+<title>Brute Force RDP</title>
+<link rel="stylesheet" type="text/css" href="{% static "css/bouton.css" %}" media="all" />
+
+<br>
+
+<body class="align">
+  <form autocomplete='off' method="POST" class="form">
+  {% csrf_token %}
+    <div class="control">
+      <h1>
+        Brute Force RDP 
+      </h1>
+    </div>
+    <div class="control block-cube block-input">
+      <input  type="text" name="ip" placeholder="IP/CIDR [192.168.37.37/32]" required>
+      <div class='bg-top'>
+        <div class='bg-inner'></div>
+      </div>
+      <div class='bg-right'>
+        <div class='bg-inner'></div>
+      </div>
+      <div class='bg'>
+        <div class='bg-inner'></div>
+      </div>
+    </div>
+
+    <button class='btn block-cube block-cube-hover' type='submit'>
+      <div class='bg-top'>
+        <div class='bg-inner'></div>
+      </div>
+      <div class='bg-right'>
+        <div class='bg-inner'></div>
+      </div>
+      <div class='bg'>
+        <div class='bg-inner'></div>
+      </div>
+      <div class='text'>
+        Start
+      </div>
+    </button>
+
+  </form>
+{% if result %}
+    <div class="text--center">
+    <p><b>Target:</b> {{ result.target_ip }}</p>
+    <p><b>Username:</b> {{ result.username }}</p>
+    <p><b>Password:</b> {{ result.password }}</p>
+    </div>
+{% elif error %}
+     <br><div class="text--center" role="alert">
+         <h5>{{ error }}</h5>
+     </div>
+ {% endif %}
+
+  </div>
+
+
+{% endblock %}
