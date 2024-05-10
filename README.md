@@ -88,7 +88,7 @@ Vous trouverez un fichier `README` spécifique dans chaque sous-dossier correspo
 
 - 📖 [**Tuto Utilisation**](https://github.com/Sleeper14/Projet-Toolbox/tree/main/Doc%20d'utilisation): Ce dossier contient des instructions détaillées sur comment utiliser la toolbox, avec des exemples et des explications pour chaque outil.
 
-- 🛠 [**Outil Utilisé**](https://github.com/Sleeper14/Projet/blob/main/Outil%20Utilis%C3%A9/README.md): Ici, vous trouverez des détails sur les outils et les bibliothèques utilisés dans le cadre du projet.
-- 📋 [**Gestion Projet**](https://github.com/Sleeper14/Projet/blob/main/Gestion%20de%20Projet/README.md): Ce dossier offre un aperçu de la gestion de projet, son organisation.
+- 🛠 [**Outil Utilisé**](https://github.com/Sleeper14/Projet-Toolbox/tree/main/Outil%20Utilis%C3%A9): Ici, vous trouverez des détails sur les outils et les bibliothèques utilisés dans le cadre du projet.
+- 📋 [**Gestion Projet**](https://github.com/Sleeper14/Projet-Toolbox/tree/main/Gestion%20de%20Projet): Ce dossier offre un aperçu de la gestion de projet, son organisation.
 
   
